@@ -3,34 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Playground</title>
+    <title>JS Event Assignment</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header>
-        <h1>Welcome to the JavaScript Playground! 🎉</h1>
+        <h1>JavaScript Playground</h1>
     </header>
 
     <main>
-        <button id="changeTextBtn">Change Text</button>
-        <button id="changeColorBtn">Change Background</button>
-        <button id="secretActionBtn">Try Secret Action</button>
+        <section id="event-handling">
+            <h2>1. Event Handling 🎈</h2>
 
-        <input type="text" id="keypressBox" placeholder="Type something..." />
-        <p id="textDisplay">Do stay here and enjoy my world</p>
+            <div class="event-item">
+                <button id="clickButton">Click Me!</button>
+                <p id="clickMessage" class="feedback"></p>
+            </div>
 
-        <div class="gallery">
-            <img id="galleryImage" src="image1.jpg" alt="Gallery Image">
-        </div>
+            <div class="event-item">
+                <div id="hoverElement" class="interactive-box">Hover Over Me</div>
+                <p id="hoverMessage" class="feedback"></p>
+            </div>
 
-        <form id="signupForm">
-            <input type="email" id="email" placeholder="Enter email">
-            <input type="password" id="password" placeholder="Enter password">
-            <button type="submit">Submit</button>
-            <p id="errorMessage"></p>
-        </form>
+            <div class="event-item">
+                <label for="keyPressInput">Type something: </label>
+                <input type="text" id="keyPressInput" placeholder="Press a key">
+                <p id="keyPressMessage" class="feedback"></p>
+            </div>
+
+            <div class="event-item bonus-item">
+                <button id="secretActionButton">Bonus: Double Click or Long Press Me</button>
+                <p id="secretActionMessage" class="feedback"></p>
+            </div>
+        </section>
+
+        <section id="interactive-elements">
+            <h2>2. Interactive Elements 🎮</h2>
+
+            <div class="interactive-item">
+                <button id="changeButton">I Change!</button>
+            </div>
+
+            <div class="interactive-item">
+                <h3>Image Gallery</h3>
+                <div class="gallery-container">
+                    <img src="https://picsum.photos/id/1015/400/250" alt="Gallery Image" id="galleryImage">
+                    <div class="gallery-controls">
+                        <button id="prevButton">Previous</button>
+                        <button id="nextButton">Next</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="interactive-item">
+                <h3>Tabs</h3>
+                <div class="tabs-container">
+                    <div class="tab-buttons">
+                        <button class="tab-button active" data-tab="tab1">Tab 1</button>
+                        <button class="tab-button" data-tab="tab2">Tab 2</button>
+                        <button class="tab-button" data-tab="tab3">Tab 3</button>
+                    </div>
+                    <div id="tab1" class="tab-content active">
+                        <p>This is the content for Tab 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div id="tab2" class="tab-content">
+                        <p>This is the content for Tab 2. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div id="tab3" class="tab-content">
+                        <p>This is the content for Tab 3. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+                    </div>
+                </div>
+            </div>
+             <div class="interactive-item bonus-item">
+                <h3>Accordion (Bonus Animation)</h3>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">Section 1</button>
+                        <div class="accordion-content">
+                            <p>Content for section 1. This section can expand and collapse with a smooth animation.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">Section 2</button>
+                        <div class="accordion-content">
+                            <p>Content for section 2. Another expandable section to demonstrate the accordion effect.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="form-validation">
+            <h2>3. Form Validation 📋</h2>
+            <form id="myForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName">
+                    <p class="error-message" id="fullNameError"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email">
+                    <p class="error-message" id="emailError"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password">
+                    <p class="error-message" id="passwordError"></p>
+                </div>
+                 <div class="form-group">
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword">
+                    <p class="error-message" id="confirmPasswordError"></p>
+                </div>
+
+                <button type="submit">Submit</button>
+                <p id="formSuccessMessage" class="feedback" style="color: green;"></p>
+            </form>
+        </section>
     </main>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Your Name Here - JS Playground</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
